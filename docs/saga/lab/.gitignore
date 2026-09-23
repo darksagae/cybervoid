@@ -1,0 +1,9 @@
+# Regenerable lab runtime artifacts — the committed screenshots are the record.
+.lab-profile/
+_evid.html
+server.log
+cached_asset.jpg
+evidence-report.txt
+carve-from-cache.txt
+hexdump-evidence.txt
+__pycache__/

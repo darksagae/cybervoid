@@ -27,9 +27,11 @@ and filmed safely.
 | A | [Appendix A — Artifacts](appendix-a-artifacts.md) | Defanged code, IOCs, cache paths |
 | B | [Appendix B — Detection & Hunting](appendix-b-detection.md) | Detection logic, hunt queries, forensics |
 | C | [Appendix C — The Files, Documented](appendix-c-the-files.md) | Every file Hammond covered: role, structure, defanged reconstruction |
+| D | [Appendix D — ATT&CK Mapping](appendix-d-attack-mapping.md) | Every artifact mapped to MITRE ATT&CK + a coverage matrix |
+| — | [Lab](lab/) | **Runnable, benign** reproduction of the cache-smuggling mechanic |
 | — | [Sources](sources.md) | Full bibliography with links |
 | — | [Documentary](documentary/) | Treatment, script, and shot list for the film |
-| — | [Screenshots](screenshots/) | Where captured evidence lives + a capture guide |
+| — | [Screenshots](screenshots/) | Captured evidence (real lab screenshots) + capture guide |
 
 ---
 
@@ -65,9 +67,11 @@ smuggler's suitcase.
 | Chapters 1–3 | ✅ Drafted |
 | Appendices A–B | ✅ Drafted |
 | Appendix C (the files/artifacts) | ✅ Drafted with recovered IOCs |
+| Appendix D (ATT&CK mapping) | ✅ Drafted |
+| Runnable lab (benign reproduction) | ✅ Built & executed |
 | Sources | ✅ Compiled |
 | Documentary treatment & Ep.1 script | ✅ Drafted |
-| Screenshots / captured evidence | ⏳ Capture guide provided; evidence to be added |
+| Screenshots / captured evidence | ✅ Real lab captures added (01, 02); video frames still to grab |
 
 This book is versioned in git. Each research session adds to the record; see the
 [Research Log](research-log.md) for the running history.

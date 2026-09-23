@@ -1,0 +1,71 @@
+# Appendix D — MITRE ATT&CK Mapping
+
+Every artifact and behavior in the saga, mapped to MITRE ATT&CK (Enterprise). Use this to
+build coverage matrices, tune detections ([Appendix B](appendix-b-detection.md)), and drive
+the documentary's "how defenders think" beat. IDs reflect the technique's public mapping;
+validate against your ATT&CK version.
+
+---
+
+## D.1 The chain, technique by technique
+
+| Step (from [Ch.1](chapter-01-the-infected-cache.md) / [App. C](appendix-c-the-files.md)) | Tactic | Technique | ID |
+|---|---|---|---|
+| Compromised site hosts the lure | Resource Development | Compromise Infrastructure | T1584 |
+| Fake CAPTCHA / FortiClient page | Initial Access / Execution | Phishing (Spearphishing via Service/Drive-by) | T1566 / T1189 |
+| `image/jpeg`-typed file cached to disk | Defense Evasion | Masquerading: Match Legitimate Name or Location | T1036.005 |
+| Payload disguised (ZIP-in-image, markers) | Defense Evasion | Obfuscated Files or Information | T1027 |
+| Payload staged inside browser cache | Collection / Staging | Data Staged: Local Data Staging | T1074.001 |
+| Victim pastes command (ClickFix/FileFix) | Execution | User Execution: Malicious File | T1204.002 |
+| Command runs via `conhost --headless` / `powershell` | Execution | Command & Scripting Interpreter: PowerShell | T1059.001 |
+| Clipboard pre-loaded by the lure page | Collection (attacker-side) | Clipboard Data (abused for delivery) | T1115 |
+| Copy `Cache_Data`, regex-carve between markers | Defense Evasion | Deobfuscate/Decode Files or Information | T1140 |
+| `Expand-Archive` the reassembled ZIP | Execution | Archive-then-extract (paired w/ T1027) | T1027 / T1059 |
+| Run `FortiClientComplianceChecker.exe` | Execution | User Execution → native API / process | T1204 / T1106 |
+| In-memory C# shellcode loader (ClickFix variant) | Defense Evasion | Reflective / in-memory execution | T1620 |
+| Persistence via scheduled task (DOUBLECUP) | Persistence | Scheduled Task/Job | T1053.005 |
+| Steal browser cookies | Credential Access | Steal Web Session Cookie | T1539 |
+| Steal saved browser creds | Credential Access | Credentials from Web Browsers | T1555.003 |
+| Read browser history/profile | Collection | Data from Local System | T1005 |
+| EtherHiding C2 lookup (DeviceManager RAT) | Command & Control | Web Service / Dead Drop Resolver | T1102 / T1568.003 |
+| Exfiltrate over C2 | Exfiltration | Exfiltration Over C2 Channel | T1041 |
+
+## D.2 Coverage matrix (map to your detections)
+
+| ID | Technique | Primary signal ([App. B](appendix-b-detection.md)) | Have detection? |
+|----|-----------|-----------------------------------------------------|:---:|
+| T1036.005 | Masquerading (image type vs body) | Proxy: `image/*` + PE/ZIP magic (B.2) | ☐ |
+| T1027 | Obfuscated files (markers) | Cache blob contains marker strings (App. C) | ☐ |
+| T1074.001 | Local data staging (in cache) | Non-image bytes in `Cache_Data` (B.3) | ☐ |
+| T1204.002 | User execution (paste) | `explorer.exe`→shell w/ cache path (B.4 R1) | ☐ |
+| T1059.001 | PowerShell | `headless`/hidden PowerShell reading cache (B.4) | ☐ |
+| T1140 | Deobfuscate/decode | `certutil`/`findstr`/regex over cache (B.4 R3) | ☐ |
+| T1053.005 | Scheduled task | New task post-execution (DOUBLECUP) | ☐ |
+| T1539 | Steal session cookie | Non-browser reads `Cookies` store (B.5) | ☐ |
+| T1555.003 | Creds from browsers | Non-browser reads `Login Data` (B.5) | ☐ |
+| T1041 | Exfil over C2 | Egress to low-rep host after collection (B.5) | ☐ |
+| T1568.003 | Dead-drop resolver | Process queries blockchain RPC (B.6 #5) | ☐ |
+
+Tick the boxes as you confirm coverage; the empty ones are your gaps.
+
+## D.3 Detection priority (biggest bang first)
+
+1. **T1204.002 + T1059.001** — the ClickFix/FileFix paste is the chain's mandatory human
+   step and the single highest-fidelity catch. Own this first.
+2. **T1140 (cache carve)** — `certutil`/`findstr`/PowerShell regex over `Cache_Data` is rare
+   and specific.
+3. **T1036.005 (type/magic mismatch)** — catches delivery at the proxy, before execution.
+4. **T1539 / T1555.003 (the loot)** — the safety net if delivery slips through.
+
+## D.4 Navigator layer
+
+To build an ATT&CK Navigator layer, score the D.2 techniques (e.g. `score: 100` for the D.3
+priorities, `50` for the rest) and color by coverage. The `techniqueID`s above are the
+`techniques[].techniqueID` values; sub-techniques use the full dotted ID (e.g.
+`T1204.002`). Keep this appendix and the layer in sync as detections land.
+
+---
+
+*Cross-references:* delivery mechanics → [Ch.2](chapter-02-cache-smuggling.md); the specific
+files/IOCs → [Appendix C](appendix-c-the-files.md); detection logic → [Appendix B](appendix-b-detection.md);
+runnable proof → [lab/](lab/README.md).

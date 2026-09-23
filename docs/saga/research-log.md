@@ -113,6 +113,32 @@ FileFix-Fortinet lure costumes in Chapter 1 and Appendix C §C.0.
 for analysis, with the final execution line disabled (`<REDACTED>`); the chain is inert with
 no attacker-hosted cached image.
 
+## Session 005 — Building the lab & capturing real evidence
+
+**Goal:** Reproduce the cache-smuggling *mechanic* safely, capture genuine screenshots, and
+map every artifact to MITRE ATT&CK.
+
+1. **Built a benign lab** (`docs/saga/lab/`): `make_payload.py` wraps a harmless ZIP (one
+   text note) between markers `LABSTART`/`LABEND` behind a real JPEG header; `server.py`
+   serves it as `Content-Type: image/jpeg`; `index.html` is a SIMULATED lure whose hidden
+   `<img>` forces caching; `carve.py` reproduces the carve step but only **prints** (never
+   executes); `capture.py` drives headless Chromium and inspects its cache.
+2. **Ran it end-to-end.** Installed `playwright`, used the environment's Chromium at
+   `/opt/pw-browsers/chromium-1194/...`. Result: the asset was served `image/jpeg`, and the
+   marker-wrapped ZIP **landed in Chromium's real cache** at
+   `Default/Cache/Cache_Data/d3c0ba3e19ba03b9_0` (859 bytes, 302 carved). `carve.py` pulled
+   the benign ZIP back out. `file(1)` even misreports the asset as "JPEG image data" —
+   proving the disguise. *This is the whole saga, harmless and in miniature.*
+3. **Captured evidence** → `screenshots/01-lab-lure-page.png` (rendered lure) and
+   `screenshots/02-lab-cache-evidence.png` (terminal proof), plus `lab/evidence-report.txt`.
+4. **Wrote [Appendix D — ATT&CK Mapping](appendix-d-attack-mapping.md):** every step/IOC
+   mapped to techniques (T1036.005, T1027, T1074.001, T1204.002, T1059.001, T1140, T1053.005,
+   T1539, T1555.003, T1568.003, T1041, …) with a coverage matrix and detection-priority order.
+
+**Outcome:** The documentary now has real, benign screenshots; defenders have a runnable
+teaching demo and an ATT&CK coverage sheet. Runtime junk is git-ignored; screenshots +
+scripts + README are the durable record.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

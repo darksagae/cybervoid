@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  SIMULATED lure page for the Cybervoid Saga documentary.
+  This is a BENIGN teaching prop. It does NOT write any command to the clipboard
+  and it does NOT ask you to run anything. Its only "malicious-looking" act is a
+  hidden <img> that makes the browser cache a file which is really a ZIP.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Verify You Are Human — [SIMULATED / LAB]</title>
+  <style>
+    :root { --bg:#0a0e0c; --fg:#c9f5df; --dim:#5e8f79; --line:#173a2c; --orb:#8b5cf6; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg);
+           font:16px/1.5 ui-monospace,"DejaVu Sans Mono",monospace;
+           display:grid; place-items:center; min-height:100vh; }
+    .card { width:min(520px,92vw); border:1px solid var(--line); border-radius:14px;
+            background:#0d1512; padding:28px; box-shadow:0 24px 60px rgba(0,0,0,.6); }
+    .sim { color:#f871a0; letter-spacing:.15em; font-size:12px; text-transform:uppercase; }
+    h1 { font-size:20px; margin:.4em 0 0; }
+    .box { margin-top:22px; border:1px solid var(--line); border-radius:10px; padding:16px;
+           display:flex; align-items:center; gap:14px; background:#0a0f0d; }
+    .check { width:26px; height:26px; border:2px solid var(--dim); border-radius:5px; }
+    .orb { width:12px; height:12px; border-radius:50%; background:var(--orb);
+           box-shadow:0 0 18px var(--orb); }
+    .muted { color:var(--dim); font-size:13px; margin-top:18px; }
+    code { color:#ffd36b; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="sim">◆ Simulated — Cybervoid Saga lab · no real attack ◆</div>
+    <h1>Verify you are human</h1>
+    <div class="box">
+      <span class="check"></span>
+      <span>I'm not a robot</span>
+      <span style="flex:1"></span>
+      <span class="orb" title="cybervoid"></span>
+    </div>
+    <p class="muted">
+      While you read this box, the page has quietly loaded a hidden
+      <code>&lt;img&gt;</code> pointing at <code>/cached_asset.jpg</code>.
+      The server labels that file <code>image/jpeg</code>, so your browser caches it —
+      even though its bytes are actually a ZIP wrapped in markers. That is the whole
+      trick. In this lab the ZIP contains only a friendly text note.
+    </p>
+    <p class="muted">A real lure would now tell you to paste a command. This one never will.</p>
+  </main>
+
+  <!-- The smuggle: forces the browser to fetch + cache the "image" on load. -->
+  <img src="/cached_asset.jpg" alt="" width="1" height="1"
+       style="position:absolute;left:-9999px" />
+</body>
+</html>

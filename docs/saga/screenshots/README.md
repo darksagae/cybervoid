@@ -54,11 +54,13 @@ Export the ASCII chain diagrams from the chapters as clean vector/PNG for the fi
 
 | Slot | File | Status |
 |------|------|--------|
-| 01 | hammond-fake-cloudflare-prompt | ⏳ to capture |
-| 02 | hammond-run-box-oneliner | ⏳ to capture |
-| 03 | sensepost-nginx-default-type | ⏳ to capture |
-| 04 | lab-chromium-cache_data-hexdump | ⏳ to build (lab-safe) |
-| 05 | diagram-attack-chain | ⏳ to export |
+| 01 | **01-lab-lure-page.png** | ✅ **Captured** — real Chromium render of the SIMULATED lure ([lab/](../lab/)) |
+| 02 | **02-lab-cache-evidence.png** | ✅ **Captured** — terminal proof: ZIP served as `image/jpeg` landed in `Cache_Data`, carved back out |
+| 03 | hammond-fake-cloudflare-prompt | ⏳ to capture from the video (human pass) |
+| 04 | hammond-run-box-oneliner | ⏳ to capture from the video (human pass) |
+| 05 | diagram-attack-chain | ⏳ to export from chapter ASCII art |
 
-*No binary images are committed yet — this guide defines the set so captures can be added
-consistently as the saga is filmed.*
+**Slots 01–02 are real, committed captures** produced by the runnable lab in
+[`../lab/`](../lab/README.md) — see [`../lab/evidence-report.txt`] after a run. They are
+fully benign (no malware) and ready for the documentary. Slots 03–04 need a human to grab
+frames from the source video (YouTube blocks automated capture).

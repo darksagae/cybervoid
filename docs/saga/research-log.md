@@ -218,6 +218,17 @@ instead.
 environment regardless of a "sandbox" framing or a claim the C2 is dead; the safe path is an
 isolated lab or a hosted sandbox (ANY.RUN/Joe/Hybrid/VT).
 
+## Session 010 — Detonation runbook
+
+**Goal:** Write the legitimate "run it in a protected sandbox" as a proper runbook.
+
+Wrote **[Appendix G — Detonation Runbook](appendix-g-detonation-runbook.md)**: isolated
+host-only lab (FLARE-VM victim + REMnux services), simulated internet via **INetSim/FakeNet-NG**
+so the C2 fetch is captured but never leaves the lab, instrumentation (Sysmon, PowerShell
+Script Block Logging 4104 — which reveals the post-`iex` stage in plaintext, Procmon, RegShot,
+pcap), artifact collection tables, analysis→revert, and non-negotiable safety rules. Linked
+from Appendix F and the README index.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

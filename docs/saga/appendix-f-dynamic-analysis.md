@@ -90,6 +90,10 @@ can't be this container:
 > lab**; in this cloud container it would hit the **real C2**. That's the line this project
 > won't cross here — and doesn't need to, because the behavior is already on record.
 
+> **Full step-by-step runbook:** [Appendix G — Detonation Runbook](appendix-g-detonation-runbook.md)
+> details this lab end to end (FLARE-VM + REMnux, INetSim/FakeNet, instrumentation, artifact
+> collection, revert).
+
 ## F.5 Attribution & timeline
 
 | When | Who | Contribution |

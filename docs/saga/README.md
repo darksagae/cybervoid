@@ -32,6 +32,7 @@ and filmed safely.
 | D | [Appendix D — ATT&CK Mapping](appendix-d-attack-mapping.md) | Every artifact mapped to MITRE ATT&CK + a coverage matrix |
 | E | [Appendix E — Frame-by-Frame](appendix-e-frames.md) | The video's actual frames: the `smilesofboca` lure, the size-match extractor, the C2 beacon, the fake Cloudflare form |
 | F | [Appendix F — Dynamic Analysis](appendix-f-dynamic-analysis.md) | Runtime behavior from public sandbox/vendor reports + how a safe detonation lab is built |
+| G | [Appendix G — Detonation Runbook](appendix-g-detonation-runbook.md) | Step-by-step safe detonation: FLARE-VM + REMnux, INetSim/FakeNet, artifact collection |
 | — | [Lab](lab/) | **Runnable, benign** reproduction of the cache-smuggling mechanic |
 | — | [Sources](sources.md) | Full bibliography with links |
 | — | [Documentary](documentary/) | Treatment, script, and shot list for the film |

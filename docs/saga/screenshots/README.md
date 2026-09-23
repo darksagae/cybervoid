@@ -58,7 +58,7 @@ Export the ASCII chain diagrams from the chapters as clean vector/PNG for the fi
 | 02 | **02-lab-cache-evidence.png** | ✅ **Captured** — terminal proof: ZIP served as `image/jpeg` landed in `Cache_Data`, carved back out |
 | 03 | hammond-fake-cloudflare-prompt | ⏳ to capture from the video (human pass) |
 | 04 | hammond-run-box-oneliner | ⏳ to capture from the video (human pass) |
-| 05 | diagram-attack-chain | ⏳ to export from chapter ASCII art |
+| 05 | **05-diagram-attack-chain.png** | ✅ **Rendered** — the full chain with ATT&CK IDs per stage (from `lab/make_diagram.py`) |
 
 **Slots 01–02 are real, committed captures** produced by the runnable lab in
 [`../lab/`](../lab/README.md) — see [`../lab/evidence-report.txt`] after a run. They are

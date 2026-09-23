@@ -22,6 +22,8 @@
 
 ## G.1 Lab topology
 
+![Isolated detonation lab: FLARE-VM victim + REMnux services on a host-only network with no internet route; the C2 fetch is answered inside the lab and never forwarded.](screenshots/07-detonation-lab-network.png)
+
 Two VMs on an **isolated / host-only virtual network** with **no NAT, no bridge** to the host
 LAN:
 

@@ -26,6 +26,7 @@ and filmed safely.
 | 3 | [Chapter 3 — The Ecosystem](chapter-03-the-ecosystem.md) | ClickFix, DOUBLECUP, EXIF smuggling, FileFix |
 | A | [Appendix A — Artifacts](appendix-a-artifacts.md) | Defanged code, IOCs, cache paths |
 | B | [Appendix B — Detection & Hunting](appendix-b-detection.md) | Detection logic, hunt queries, forensics |
+| C | [Appendix C — The Files, Documented](appendix-c-the-files.md) | Every file Hammond covered: role, structure, defanged reconstruction |
 | — | [Sources](sources.md) | Full bibliography with links |
 | — | [Documentary](documentary/) | Treatment, script, and shot list for the film |
 | — | [Screenshots](screenshots/) | Where captured evidence lives + a capture guide |
@@ -63,6 +64,7 @@ smuggler's suitcase.
 |------|--------|
 | Chapters 1–3 | ✅ Drafted |
 | Appendices A–B | ✅ Drafted |
+| Appendix C (the files/artifacts) | ✅ Drafted with recovered IOCs |
 | Sources | ✅ Compiled |
 | Documentary treatment & Ep.1 script | ✅ Drafted |
 | Screenshots / captured evidence | ⏳ Capture guide provided; evidence to be added |

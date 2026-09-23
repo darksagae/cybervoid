@@ -82,6 +82,37 @@ evidence) — see [screenshots/README.md](screenshots/README.md) for the capture
 
 ---
 
+## Session 004 — Recovering the actual files Hammond covered
+
+**Goal:** Document the *specific files* walked through in the video (user request: "he
+covered the files, we need them for full documentation").
+
+1. **Search** for the campaign's file-level artifacts → surfaced **Expel's** writeup
+   (*"Cache smuggling: When a picture isn't a thousand words,"* by **Marcus Hutchins /
+   MalwareTech**) as the primary file-level source, plus a GBHackers summary.
+2. **WebFetch of Expel** → returned "content truncated"; **WebFetch of GBHackers** →
+   returned empty (JS-gated). *Dead ends #2 and #3.*
+3. **Pivot to raw `curl`.** Expel page is a heavy JS bundle; piped through `sed`/`grep` to
+   carve the article prose from the persisted 1.1 MB response.
+   → **Recovered the real, deobfuscated one-liner** and the full carve chain:
+   - Lure = **FileFix / Fortinet FortiClient VPN compliance** (not Cloudflare in this
+     variant); decoy path `\\Public\Support\VPN\ForticlientCompliance.exe`.
+   - Clipboard command padded with **139 leading spaces**, run "headless" via conhost.
+   - Copies all of Chrome `Cache_Data`, `[regex]::Matches` carve **between markers
+     `bTgQcBpv` and `mX6o0lBw`**, writes `ComplianceChecker.zip`, `Expand-Archive`, then
+     runs `FortiClientComplianceChecker.exe`.
+4. **Fetched Hammond's `recaptcha-phish` GitHub** (raw README) → his benign reproduction of
+   the lure front end (`index.html` + `calc.exe` HTA), the cleanest way to study Artifact [1].
+
+**Outcome:** Wrote **[Appendix C — The Files, Documented](appendix-c-the-files.md)**: each
+artifact's role, structure, and a **defanged/neutralized** reconstruction, with the real
+(already-public) IOC markers preserved for detection. Reconciled the ClickFix-Cloudflare vs.
+FileFix-Fortinet lure costumes in Chapter 1 and Appendix C §C.0.
+
+**Ethics note recorded:** the one-liner is reproduced from a public vendor writeup, annotated
+for analysis, with the final execution line disabled (`<REDACTED>`); the chain is inert with
+no attacker-hosted cached image.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

@@ -107,5 +107,13 @@ it:
 - **[Appendix A](appendix-a-artifacts.md)** — defanged artifacts and cache paths.
 - **[Appendix B](appendix-b-detection.md)** — how to catch it.
 
+> **A note on the lure's costume.** This chapter tells the story in its widely-seen
+> **ClickFix / fake-Cloudflare** form. The file-level artifacts Hammond dissects match the
+> **FileFix / Fortinet VPN compliance** variant documented by Expel — same cache-smuggling
+> engine, different social-engineering paint. The specific files (the lure page, the
+> disguised `image/jpeg` ZIP, the carve-and-run one-liner with markers `bTgQcBpv` /
+> `mX6o0lBw`, the `ComplianceChecker.zip` runner) are catalogued in
+> **[Appendix C — The Files, Documented](appendix-c-the-files.md)**.
+
 > **Researcher credit:** The investigation narrated here is John Hammond's. This chapter
 > is a study and retelling for defensive education, not a transcript. Watch the original.

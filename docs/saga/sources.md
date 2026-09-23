@@ -24,6 +24,27 @@ own write-up or video) are marked ★. Access dates reflect the research session
   `https://malwaretech.com/2025/10/exif-smuggling.html`
   The EXIF/steganographic evolution — payload carried inside a genuinely valid image.
 
+## The exact campaign in the video (file-level analysis)
+
+- ★ **Expel — "Cache smuggling: When a picture isn't a thousand words"** (analysis by
+  **Marcus Hutchins / MalwareTech**).
+  `https://expel.com/blog/cache-smuggling-when-a-picture-isnt-a-thousand-words/`
+  The **FileFix / Fortinet** variant: `headless powershell` one-liner, 139-space clipboard
+  padding, Chrome `Cache_Data` copy, regex carve between markers `bTgQcBpv` … `mX6o0lBw`,
+  `ComplianceChecker.zip` → `FortiClientComplianceChecker.exe`. Source of Appendix C.
+
+- **GBHackers — "Hackers Enhance ClickFix Attack Using Cache Smuggling."**
+  `https://gbhackers.com/cache-smuggling/` — secondary summary of the Expel research.
+
+## Hammond's own reproduction (benign, for study)
+
+- ★ **John Hammond — `recaptcha-phish`** (GitHub, 2024-09-13).
+  `https://github.com/JohnHammond/recaptcha-phish`
+  Safe recreation of the lure front end: `index.html` (fake reCAPTCHA, clipboard write in
+  `showVerifyWindow`), `recaptcha-verify` (HTA popping `calc.exe`), README crediting Unit42 /
+  Orange Cyberdefense / Huntress and linking the Emmenhtal loader + **LummaStealer** wave.
+  Reuses UI from `github.com/75a/fake-captcha`.
+
 ## Campaigns & criminal services
 
 - **BleepingComputer — "New DOUBLECUP ClickFix service hides malware in browser cache

@@ -57,10 +57,22 @@ Export the ASCII chain diagrams from the chapters as clean vector/PNG for the fi
 | 01 | **01-lab-lure-page.png** | ✅ **Captured** — real Chromium render of the SIMULATED lure ([lab/](../lab/)) |
 | 02 | **02-lab-cache-evidence.png** | ✅ **Captured** — terminal proof: ZIP served as `image/jpeg` landed in `Cache_Data`, carved back out |
 | 03 | hammond-fake-cloudflare-prompt | ⏳ to capture from the video (human pass) |
-| 04 | hammond-run-box-oneliner | ⏳ to capture from the video (human pass) |
+| 04 | *(video frames — see below)* | ✅ **Captured** in [`video/`](video/) |
 | 05 | **05-diagram-attack-chain.png** | ✅ **Rendered** — the full chain with ATT&CK IDs per stage (from `lab/make_diagram.py`) |
 
-**Slots 01–02 are real, committed captures** produced by the runnable lab in
-[`../lab/`](../lab/README.md) — see [`../lab/evidence-report.txt`] after a run. They are
-fully benign (no malware) and ready for the documentary. Slots 03–04 need a human to grab
-frames from the source video (YouTube blocks automated capture).
+**Slots 01–02** are real, committed lab captures (benign). **Slot 05** is the rendered
+diagram.
+
+### Video frames — ✅ captured & documented ([`video/`](video/))
+
+12 frames from John Hammond's *"My Browser Cache Got Infected"* are committed under
+[`video/`](video/) and documented frame-by-frame in
+[Appendix E](../appendix-e-frames.md). Used for defensive commentary/education, credited to
+John Hammond.
+
+| File | Shows |
+|------|-------|
+| `01-lure-cloudflare-clickfix.png` | the `smilesofboca` compromised site + fake Cloudflare ClickFix box |
+| `02-clipboard-size-match-extractor.png` | the pasted command (`%~zf==17635` → `t.bat`) in Sublime |
+| `03-stage2-c2-beacon.png` | `stage2.ps1`: `irm`+`iex` to randomized/fallback C2 |
+| `04`–`12` `*-fake-cf-*` | the PowerShell-rendered fake "Cloudflare Security Challenge" form |

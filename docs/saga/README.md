@@ -30,6 +30,7 @@ and filmed safely.
 | B | [Appendix B — Detection & Hunting](appendix-b-detection.md) | Detection logic, hunt queries, forensics |
 | C | [Appendix C — The Files, Documented](appendix-c-the-files.md) | Every file Hammond covered: role, structure, defanged reconstruction |
 | D | [Appendix D — ATT&CK Mapping](appendix-d-attack-mapping.md) | Every artifact mapped to MITRE ATT&CK + a coverage matrix |
+| E | [Appendix E — Frame-by-Frame](appendix-e-frames.md) | The video's actual frames: the `smilesofboca` lure, the size-match extractor, the C2 beacon, the fake Cloudflare form |
 | — | [Lab](lab/) | **Runnable, benign** reproduction of the cache-smuggling mechanic |
 | — | [Sources](sources.md) | Full bibliography with links |
 | — | [Documentary](documentary/) | Treatment, script, and shot list for the film |
@@ -73,7 +74,7 @@ smuggler's suitcase.
 | Runnable lab (benign reproduction) | ✅ Built & executed |
 | Sources | ✅ Compiled |
 | Documentary treatment & Ep.1 script | ✅ Drafted |
-| Screenshots / captured evidence | ✅ Real lab captures added (01, 02); video frames still to grab |
+| Screenshots / captured evidence | ✅ Lab captures + **12 documented video frames** ([screenshots/video/](screenshots/video/)) |
 
 This book is versioned in git. Each research session adds to the record; see the
 [Research Log](research-log.md) for the running history.

@@ -107,6 +107,10 @@ it:
 - **[Appendix A](appendix-a-artifacts.md)** — defanged artifacts and cache paths.
 - **[Appendix B](appendix-b-detection.md)** — how to catch it.
 
+> **See the actual frames.** [Appendix E](appendix-e-frames.md) documents this exact chain
+> frame-by-frame from the video — the compromised `smilesofboca` site, the size-match
+> extractor (`%~zf==17635`), the C2 beacon, and the PowerShell-rendered fake Cloudflare form.
+
 > **A note on the lure's costume.** This chapter tells the story in its widely-seen
 > **ClickFix / fake-Cloudflare** form. The file-level artifacts Hammond dissects match the
 > **FileFix / Fortinet VPN compliance** variant documented by Expel — same cache-smuggling

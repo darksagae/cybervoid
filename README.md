@@ -19,7 +19,7 @@ it — all defanged for safe study — and ends in a **documentary** treatment.
 |------|-------|
 | The book (preface + how the research was made) | [`docs/saga/README.md`](docs/saga/README.md) · [`research-log.md`](docs/saga/research-log.md) |
 | Chapters 1–5 | [The Infected Cache](docs/saga/chapter-01-the-infected-cache.md) · [Cache Smuggling](docs/saga/chapter-02-cache-smuggling.md) · [The Ecosystem](docs/saga/chapter-03-the-ecosystem.md) · [The Marketplace](docs/saga/chapter-04-the-marketplace.md) · [The Defense](docs/saga/chapter-05-the-defense.md) |
-| Appendices | [A Artifacts](docs/saga/appendix-a-artifacts.md) · [B Detection](docs/saga/appendix-b-detection.md) · [C The Files](docs/saga/appendix-c-the-files.md) · [D ATT&CK](docs/saga/appendix-d-attack-mapping.md) |
+| Appendices | [A Artifacts](docs/saga/appendix-a-artifacts.md) · [B Detection](docs/saga/appendix-b-detection.md) · [C The Files](docs/saga/appendix-c-the-files.md) · [D ATT&CK](docs/saga/appendix-d-attack-mapping.md) · [E Frame-by-Frame](docs/saga/appendix-e-frames.md) |
 | Runnable, **benign** lab | [`docs/saga/lab/`](docs/saga/lab/README.md) |
 | Captured evidence (real screenshots) | [`docs/saga/screenshots/`](docs/saga/screenshots/) |
 | ATT&CK Navigator layer | [`attack-navigator-layer.json`](docs/saga/attack-navigator-layer.json) |

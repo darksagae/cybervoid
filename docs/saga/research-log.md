@@ -169,6 +169,34 @@ scripts + README are the durable record.
 **Outcome:** The saga now has a complete five-chapter arc (infection → technique → ecosystem
 → marketplace → defense) and two documentary episode scripts, all defensive/defanged.
 
+## Session 008 — The video frames arrive (payload + extraction documented)
+
+**Goal:** The user uploaded 13 HEIC screenshots + a note asking to document the DevTools
+request payload and the "sublime code file" that reads the cached data — "extract it and
+show how he extracted it."
+
+1. **Converted** the HEIC frames to PNG (installed `pillow-heif`) and read all 12.
+2. **Identified the campaign:** the **ClickFix / fake-Cloudflare** variant on a compromised
+   dentist site (`smilesofboca`) — the sibling of Appendix C's FileFix/Fortinet case.
+3. **Recovered the extractor** (frame 02, the Sublime file): the pasted command walks the
+   browser cache (`for /r … (f_*)`) and selects the payload **by exact file size**
+   (`@if %~zf==17635`), copies it to `%TEMP%\t.bat`, and runs it. **The 17,635-byte size is
+   the selector** — no download, no marker. This is the "how he extracted it" answer.
+4. **Recovered stage 2** (frame 03): `f_00000d`/`stage2.ps1` beacons via `irm` + obfuscated
+   `iex` (`.(get-alias *ex)`) to randomized C2 `45.39.216[.]46/velcap3b|3d` with a fallback
+   host; hidden PowerShell.
+5. **Recovered the decoy** (frames 04–12): a full PowerShell-rendered "Cloudflare Security
+   Challenge" WinForms window (fake node/ray IDs, animated check rows, progress bar) to keep
+   the victim calm while stage 2 runs.
+6. **Committed** the 12 frames to [`screenshots/video/`](screenshots/video/) (credited to
+   John Hammond, commentary/education) and wrote
+   **[Appendix E — Frame-by-Frame](appendix-e-frames.md)** documenting the payload, the
+   size-match extraction, the C2, the decoy, and consolidated defanged IOCs.
+
+**Outcome:** The note's asks are answered — the payload is documented, the extraction method
+is explained precisely, and the "sublime code file" is transcribed (defanged). Closes the
+long-open "grab video frames" thread.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

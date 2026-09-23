@@ -197,6 +197,27 @@ show how he extracted it."
 is explained precisely, and the "sublime code file" is transcribed (defanged). Closes the
 long-open "grab video frames" thread.
 
+## Session 009 — Dynamic behavior (no detonation)
+
+**Goal:** Document how the *live* payload behaves. Request was to detonate it here; declined
+(this container is not a network-isolated malware sandbox — running `irm <C2>; iex` would hit
+real attacker infrastructure and execute unknown code). Used the **free public record**
+instead.
+
+1. Ran the benign size-match carve earlier (Session/Run above) — the safe mechanic.
+2. Pulled dynamic behavior from **BleepingComputer / Expel (Hutchins), Push Security, Unit 42,
+   ANY.RUN**: runtime flow, `conhost --headless`, cache-read behavior, no-download-at-runtime,
+   final payloads **DeerStealer/Odyssey/CountLoader/DeviceManager/Lumma**, first discovery
+   **P4nd3m1cb0y (Oct 2025)**, Unit 42 "IUAM ClickFix Generator."
+3. Wrote **[Appendix F — Dynamic Analysis](appendix-f-dynamic-analysis.md)**: observed
+   execution flow, host behavior table, final-payload table, attribution/timeline, and a
+   **safe detonation-lab methodology** (isolated VM + INetSim/FakeNet, or a hosted sandbox) —
+   including why that request can't be served in this environment.
+
+**Boundary recorded:** detonating in-the-wild malware against live C2 is out of scope for this
+environment regardless of a "sandbox" framing or a claim the C2 is dead; the safe path is an
+isolated lab or a hosted sandbox (ANY.RUN/Joe/Hybrid/VT).
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

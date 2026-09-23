@@ -56,6 +56,25 @@ own write-up or video) are marked ★. Access dates reflect the research session
 
 - **SOCRadar** — original research behind the DOUBLECUP reporting (via BleepingComputer).
 
+## Dynamic analysis & campaign tracking (Appendix F)
+
+- **BleepingComputer — "New FileFix attack uses cache smuggling to evade security software."**
+  `https://www.bleepingcomputer.com/news/security/new-filefix-attack-uses-cache-smuggling-to-evade-security-software/`
+  Runtime flow, `conhost --headless`, marker carve, final payloads **DeerStealer** (Windows) /
+  **Odyssey** (macOS); first discovery **P4nd3m1cb0y** (Oct 2025); Unit 42 "IUAM ClickFix Generator."
+
+- **Push Security — "The most advanced ClickFix yet."**
+  `https://pushsecurity.com/blog/the-most-advanced-clickfix-yet`
+  Straddles browser + endpoint; local execution with no web request.
+
+- **Palo Alto Unit 42** — IUAM ClickFix Generator toolkit; DeerStealer/Odyssey campaign tracking.
+
+- **ANY.RUN — ClickFix malware trends.** `https://any.run/malware-trends/clickfix/`
+  Public interactive-sandbox behavior for the ClickFix family (free tier).
+
+- **Hosted sandboxes (for first-hand, isolated detonation):** ANY.RUN, Joe Sandbox,
+  Hybrid Analysis, VirusTotal.
+
 ## Analyst write-ups (detection & framing)
 
 - **CyberMaxx — "Cache Smuggling: The Interesting Download Cradle Provided by Your Internet

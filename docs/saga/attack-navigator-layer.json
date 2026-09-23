@@ -1,0 +1,55 @@
+{
+  "name": "Cybervoid Saga — Browser Cache Smuggling",
+  "versions": { "attack": "15", "navigator": "4.9.1", "layer": "4.5" },
+  "domain": "enterprise-attack",
+  "description": "ATT&CK coverage for the browser cache smuggling / ClickFix-FileFix chain documented in The Cybervoid Saga (docs/saga). Scores: 100 = highest-fidelity detection priority, 75 = strong, 50 = supporting. See appendix-d-attack-mapping.md.",
+  "filters": { "platforms": ["Windows", "macOS"] },
+  "sorting": 3,
+  "layout": { "layout": "side", "showID": true, "showName": true },
+  "hideDisabled": false,
+  "techniques": [
+    { "techniqueID": "T1584", "score": 25, "color": "#3b1f6b", "comment": "Compromised site hosts the lure page." },
+    { "techniqueID": "T1566", "score": 50, "color": "#5b3aa6", "comment": "Phishing: fake CAPTCHA / FortiClient verification lure." },
+    { "techniqueID": "T1189", "score": 50, "color": "#5b3aa6", "comment": "Drive-by: the visited page seeds the cache." },
+    { "techniqueID": "T1036", "score": 75, "color": "#7a4fd6", "comment": "Masquerading umbrella (image type vs. real bytes)." },
+    { "techniqueID": "T1036.005", "score": 75, "color": "#7a4fd6", "comment": "image/jpeg-typed ZIP; ComplianceChecker.exe named to blend with FortiClient." },
+    { "techniqueID": "T1027", "score": 75, "color": "#7a4fd6", "comment": "Obfuscation: ZIP-in-image wrapped in markers bTgQcBpv/mX6o0lBw." },
+    { "techniqueID": "T1074", "score": 75, "color": "#7a4fd6", "comment": "Data staged locally umbrella." },
+    { "techniqueID": "T1074.001", "score": 75, "color": "#7a4fd6", "comment": "Payload pre-staged inside the browser cache (Cache_Data)." },
+    { "techniqueID": "T1204", "score": 100, "color": "#8b5cf6", "comment": "User execution umbrella." },
+    { "techniqueID": "T1204.002", "score": 100, "color": "#8b5cf6", "comment": "TOP PRIORITY: victim pastes the command (ClickFix/FileFix)." },
+    { "techniqueID": "T1059", "score": 100, "color": "#8b5cf6", "comment": "Scripting interpreter umbrella." },
+    { "techniqueID": "T1059.001", "score": 100, "color": "#8b5cf6", "comment": "TOP PRIORITY: headless/hidden PowerShell carve-and-run." },
+    { "techniqueID": "T1115", "score": 50, "color": "#5b3aa6", "comment": "Lure page pre-loads the clipboard (delivery abuse)." },
+    { "techniqueID": "T1140", "score": 100, "color": "#8b5cf6", "comment": "TOP PRIORITY: regex/certutil/findstr carve of cache bytes." },
+    { "techniqueID": "T1106", "score": 40, "color": "#3b1f6b", "comment": "Native execution of the unzipped runner." },
+    { "techniqueID": "T1620", "score": 50, "color": "#5b3aa6", "comment": "In-memory C# shellcode loader (ClickFix variant)." },
+    { "techniqueID": "T1053", "score": 50, "color": "#5b3aa6", "comment": "Scheduled task umbrella." },
+    { "techniqueID": "T1053.005", "score": 50, "color": "#5b3aa6", "comment": "Persistence via scheduled task (CountLoader / DOUBLECUP)." },
+    { "techniqueID": "T1539", "score": 75, "color": "#7a4fd6", "comment": "Steal web session cookies (infostealer finale)." },
+    { "techniqueID": "T1555", "score": 75, "color": "#7a4fd6", "comment": "Credentials from password stores umbrella." },
+    { "techniqueID": "T1555.003", "score": 75, "color": "#7a4fd6", "comment": "Credentials from web browsers (Login Data)." },
+    { "techniqueID": "T1005", "score": 50, "color": "#5b3aa6", "comment": "Read browser history/profile data." },
+    { "techniqueID": "T1102", "score": 40, "color": "#3b1f6b", "comment": "Web service / dead-drop for C2 resolution." },
+    { "techniqueID": "T1568.003", "score": 50, "color": "#5b3aa6", "comment": "EtherHiding: C2 address held in a blockchain smart contract." },
+    { "techniqueID": "T1041", "score": 75, "color": "#7a4fd6", "comment": "Exfiltrate stolen cookies/creds over C2." }
+  ],
+  "gradient": {
+    "colors": ["#1a1c20", "#5b3aa6", "#8b5cf6"],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    { "label": "Top detection priority (own first)", "color": "#8b5cf6" },
+    { "label": "Strong signal", "color": "#7a4fd6" },
+    { "label": "Supporting signal", "color": "#5b3aa6" },
+    { "label": "Context / low-fidelity", "color": "#3b1f6b" }
+  ],
+  "metadata": [
+    { "name": "saga-source", "value": "docs/saga/appendix-d-attack-mapping.md" },
+    { "name": "primary-research", "value": "Expel (Hutchins), SensePost (Chalot), John Hammond" }
+  ],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#0d1512",
+  "selectTechniquesAcrossTactics": true
+}

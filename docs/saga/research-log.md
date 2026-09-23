@@ -139,6 +139,20 @@ map every artifact to MITRE ATT&CK.
 teaching demo and an ATT&CK coverage sheet. Runtime junk is git-ignored; screenshots +
 scripts + README are the durable record.
 
+## Session 006 — Episode 2, repo wiring, and PR
+
+**Goal:** Extend the saga (Chapter 4), surface it from the repo root, and open a PR.
+
+1. **Wrote [Chapter 4 — The Marketplace](chapter-04-the-marketplace.md)** (Episode 2): the
+   DOUBLECUP loader-as-a-service story — how the technique became a rentable product
+   (hosted steganographic PNGs, per-victim keys, auto-rebuilt payloads), its size-based
+   cache-carve chain, the IP-derived decryption key as anti-analysis, CountLoader +
+   DeviceManager (EtherHiding C2), and the open-directory (`213.139.77[.]109:9090`) that
+   SOCRadar pulled to unravel it.
+2. **Created a root `README.md`** (none existed) introducing the platform and featuring the
+   saga with a full navigation table.
+3. **Opened a PR** from `claude/cyber-research-documentation-p94xvu` into `master`.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

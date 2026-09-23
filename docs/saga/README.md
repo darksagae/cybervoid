@@ -24,6 +24,7 @@ and filmed safely.
 | 1 | [Chapter 1 — The Infected Cache](chapter-01-the-infected-cache.md) | John Hammond's investigation, scene by scene |
 | 2 | [Chapter 2 — Cache Smuggling](chapter-02-cache-smuggling.md) | The technique itself, in technical depth |
 | 3 | [Chapter 3 — The Ecosystem](chapter-03-the-ecosystem.md) | ClickFix, DOUBLECUP, EXIF smuggling, FileFix |
+| 4 | [Chapter 4 — The Marketplace](chapter-04-the-marketplace.md) | DOUBLECUP loader-as-a-service (Episode 2) |
 | A | [Appendix A — Artifacts](appendix-a-artifacts.md) | Defanged code, IOCs, cache paths |
 | B | [Appendix B — Detection & Hunting](appendix-b-detection.md) | Detection logic, hunt queries, forensics |
 | C | [Appendix C — The Files, Documented](appendix-c-the-files.md) | Every file Hammond covered: role, structure, defanged reconstruction |
@@ -64,7 +65,7 @@ smuggler's suitcase.
 
 | Part | Status |
 |------|--------|
-| Chapters 1–3 | ✅ Drafted |
+| Chapters 1–4 | ✅ Drafted |
 | Appendices A–B | ✅ Drafted |
 | Appendix C (the files/artifacts) | ✅ Drafted with recovered IOCs |
 | Appendix D (ATT&CK mapping) | ✅ Drafted |

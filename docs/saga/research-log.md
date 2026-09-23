@@ -153,6 +153,22 @@ scripts + README are the durable record.
    saga with a full navigation table.
 3. **Opened a PR** from `claude/cyber-research-documentation-p94xvu` into `master`.
 
+## Session 007 — Episode 2 script + Chapter 5 (the defense)
+
+**Goal:** Extend the narrative and close the arc; keep watching the PR.
+
+1. **Subscribed to PR #1 activity** (comments, CI, reviews) for autofix/response.
+2. **Wrote [Episode 2 script](documentary/script-episode-02.md)** — "The Marketplace,"
+   matching Chapter 4 (loader-as-a-service, the service diagram, IP-derived key, on-chain C2,
+   the open-directory loose thread).
+3. **Wrote [Chapter 5 — The Defense](chapter-05-the-defense.md)** (Episode 3): the one-weakness
+   thesis, a **FileFix** vs ClickFix breakdown, layered defense-in-depth, a hardening
+   checklist, an IR playbook, and defensive metrics — consolidating Appendices B and D.
+4. Indexes (saga + root README) and this log updated.
+
+**Outcome:** The saga now has a complete five-chapter arc (infection → technique → ecosystem
+→ marketplace → defense) and two documentary episode scripts, all defensive/defanged.
+
 ## Open threads (to chase in future sessions)
 
 - [ ] Frame-by-frame capture of the Hammond video for the screenshot evidence set.

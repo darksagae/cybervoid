@@ -167,4 +167,18 @@ Same engine — cache smuggling, located by size — different lure and staging:
 | Stage lang | `headless powershell` → ZIP | `t.bat` → `stage2.ps1` (`irm`+`iex`) |
 | Decoy | — | full PowerShell-rendered Cloudflare form |
 
+## E.8 Password-protected sample
+
+The extracted code above is also bundled as a **password-protected ZIP** for safe storage
+(so it can't be opened or run by accident):
+
+- File: [`samples/payload-void.zip`](samples/payload-void.zip) · **password: `void`**
+- Contents: `payload.txt` (lure + extractor + stage-2 beacon + decoy, defanged) + a warning readme.
+- See [`samples/README.md`](samples/README.md).
+
+The content stays defanged (C2s `[.]`-neutralized, execution disabled) as a second layer —
+the weak password only prevents *accidental* access; the neutralization is the real safety.
+
+---
+
 *Sources:* John Hammond's video (frames); technique lineage in [sources.md](sources.md).

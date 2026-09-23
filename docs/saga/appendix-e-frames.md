@@ -167,6 +167,17 @@ Same engine — cache smuggling, located by size — different lure and staging:
 | Stage lang | `headless powershell` → ZIP | `t.bat` → `stage2.ps1` (`irm`+`iex`) |
 | Decoy | — | full PowerShell-rendered Cloudflare form |
 
+## E.7b Watch it work (benign sandbox run)
+
+The size-match extraction was **reproduced and run** in the sandbox, benignly — see
+[`lab/RUN-size-match.md`](lab/RUN-size-match.md) and the captured output
+[`screenshots/06-lab-size-match-carve.png`](screenshots/06-lab-size-match-carve.png). It
+seeds a fake cache (with off-by-one decoys at 17,634 / 17,636 bytes) and shows the carve
+selecting **only** the exact 17,635-byte file — no download, no network, no execution.
+
+> The next step (`stage2.ps1` → `irm <C2>; iex`) is **not** run: that fetches and executes
+> live attacker code. E.3–E.4 document it statically instead.
+
 ## E.8 Password-protected sample
 
 The extracted code above is also bundled as a **password-protected ZIP** for safe storage

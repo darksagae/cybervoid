@@ -7,3 +7,6 @@ evidence-report.txt
 carve-from-cache.txt
 hexdump-evidence.txt
 __pycache__/
+.fake-cache/
+.fake-cache-run.txt
+_size.html

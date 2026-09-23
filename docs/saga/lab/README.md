@@ -19,6 +19,8 @@ to generate the documentary's screenshots and to teach the technique.
 | `carve.py` | Benign reproduction of the carve step: regex-match between markers, unzip, **print** (never execute). Works on a file or a real `Cache_Data` dir. |
 | `capture.py` | Drives headless Chromium through the demo, screenshots the page, and proves the ZIP landed in the browser's real cache. |
 | `render_evidence.py` | Renders the text evidence into a screenshot for the film. |
+| `size_match_demo.py` / `.bat` | **Benign** reproduction of the campaign's size-match cache carve (`%~zf==17635`) — prints the match, never executes. See [`RUN-size-match.md`](RUN-size-match.md). |
+| `make_diagram.py` | Renders the attack-chain diagram (screenshot slot 05). |
 
 ## Run it
 
